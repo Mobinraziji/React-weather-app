@@ -1,0 +1,28 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --primary-color: #0f1317;
+  --secondary-color: #0b0d0f;
+  --color-bg: #0f1416;
+  --color-tx: #E3B505;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #14181b;
+  color: #fff;
+}
+
+#root {
+  max-width: 1000px;
+  margin: auto;
+}
+

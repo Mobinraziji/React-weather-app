@@ -1,0 +1,6 @@
+.weatherBox {
+    display: flex;
+    margin-top: 10px;
+    max-width: 1000px;
+    width: 100%;
+}

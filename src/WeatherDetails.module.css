@@ -1,0 +1,101 @@
+.detailContainer {
+    display: flex;
+    flex-direction: column;
+    background: #0b0d0f;
+    width: 70%;
+    border-radius: 15px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    padding: 20px;
+    /* box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.1); */
+}
+.otherDays {
+  display: flex;
+  border-bottom: solid #e3b70524 0.5px ;
+  padding-bottom: 20px;
+}
+
+.navbar {
+  margin: 0 10px;
+  margin-bottom: 5px;
+  display: flex;
+justify-content: space-between;
+}
+
+.navbar img {
+  width: 40px;
+  border-radius: 50%;
+}
+.navbar h3 {
+  font-size: 1.5rem;
+  color: #e3b705d9;
+  font-weight: 500;
+}
+  .dailyCard {
+    background-color: #000;
+    border-radius: 12px;
+    padding: 20px 10px;
+    margin: 15px 10px;
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    
+  }
+  
+  
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .date {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .temp {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .desc {
+    font-size: 12px;
+    color: #555;
+  }
+  
+
+  .todayshilights {
+    margin: 20px 10px;
+  }
+  .todayshilights h4 {
+    color: #e3b705d9;
+    font-weight: 500;
+  }
+  
+  .highlightsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .highlightCard {
+    background: #000;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .highlightCard h5 {
+    font-size: 14px;
+    color: #ebebeb5e;
+    font-weight: 500;
+  }
+  
+  .highlightCard p {
+    margin: 5px 0 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  

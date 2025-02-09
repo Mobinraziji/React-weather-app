@@ -1,0 +1,18 @@
+.headerContainer {
+    display: flex;
+    width: 1000px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0b0d0f;
+    padding: 10px 30px;
+    border-radius: 10px;
+    height: 60px;
+}
+
+.headerContainer h2 {
+    color: #E3B505;
+}
+
+.headerContainer span {
+    color: #e3b70596;
+}
