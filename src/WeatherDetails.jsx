@@ -6,17 +6,37 @@ import { FaTemperatureArrowDown } from "react-icons/fa6";
 import { GiPressureCooker } from "react-icons/gi";
 import { FaCloud } from "react-icons/fa";
 
+import { convertTemperature } from "./services/weatherApi";
+
 import { FiSunrise } from "react-icons/fi";
 import { FiSunset } from "react-icons/fi";
 
-function WeatherDetails({ weeklyData, isLoading, weather }) {
+function WeatherDetails({ weeklyData, isLoading, weather, unit, setUnit }) {
   console.log(weather);
 
   return (
     <div className={styles.detailContainer}>
       <div className={styles.navbar}>
         <h3>This Week:</h3>
-        <img src="./myPhoto.png" alt="photo" />
+        <div className={styles.buttonsClick}>
+          <button
+            className={
+              unit === "metric" ? styles.activeUnit : styles.unitButton
+            }
+            onClick={() => setUnit("metric")}
+          >
+            °C
+          </button>
+          <button
+            className={
+              unit === "imperial" ? styles.activeUnit : styles.unitButton
+            }
+            onClick={() => setUnit("imperial")}
+          >
+            °F
+          </button>
+          <img src="./myPhoto.png" alt="photo" />
+        </div>
       </div>
 
       <div className={styles.otherDays}>
@@ -35,7 +55,11 @@ function WeatherDetails({ weeklyData, isLoading, weather }) {
                   alt="weather icon"
                   className={styles.icon}
                 />
-                <p className={styles.temp}>{Math.round(day.main.temp)}°C</p>
+                <p className={styles.temp}>
+                  {Math.round(convertTemperature(day.main.temp, unit))}°
+                  {unit === "metric" ? "C" : "F"}
+                </p>
+
                 <p className={styles.desc}>{day.weather[0].description}</p>
               </div>
             );
@@ -52,12 +76,18 @@ function WeatherDetails({ weeklyData, isLoading, weather }) {
             <div className={styles.highlightCard}>
               <FaTemperatureArrowDown />
               <h5>Temp Min:</h5>
-              <p>{weather.main.temp_min}°C</p>
+              <p>
+                {Math.round(convertTemperature(weather.main.temp_min, unit))}°
+                {unit === "metric" ? "C" : "F"}
+              </p>
             </div>
             <div className={styles.highlightCard}>
               <FaTemperatureArrowUp />
               <h5>Temp Max:</h5>
-              <p>{weather.main.temp_max}°C</p>
+              <p>
+                {Math.round(convertTemperature(weather.main.temp_max, unit))}°
+                {unit === "metric" ? "C" : "F"}
+              </p>
             </div>
             <div className={styles.highlightCard}>
               <GiPressureCooker />

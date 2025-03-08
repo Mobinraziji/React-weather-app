@@ -25,6 +25,7 @@ justify-content: space-between;
 .navbar img {
   width: 40px;
   border-radius: 50%;
+  margin-left: 10px;
 }
 .navbar h3 {
   font-size: 1.5rem;
@@ -99,3 +100,44 @@ justify-content: space-between;
     font-weight: bold;
   }
   
+
+  .unitSwitch {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  
+  .unitButton {
+    background: none;
+    border: 1px solid #e3b505;
+    color: #e3b505;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    border-radius: 50%;
+    font-size: 16px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .unitButton:hover {
+    background: rgba(227, 181, 5, 0.2);
+  }
+  
+  .activeUnit {
+    background: #e3b505;
+    color: #111;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+  }
+  
+  .buttonsClick {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }

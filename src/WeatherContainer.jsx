@@ -2,7 +2,11 @@ import { useState, useEffect } from "react";
 
 import WeatherDetails from "./WeatherDetails";
 import WeatherOverview from "./WeatherOverview";
-import { getWeatherApiData, getWeeklyForcast } from "./services/weatherApi";
+import {
+  getWeatherApiData,
+  getWeeklyForcast,
+  getWeatherByCoords,
+} from "./services/weatherApi";
 
 import styles from "./WeatherContainer.module.css";
 
@@ -11,6 +15,7 @@ function WeatherContainer() {
   const [weather, setWeather] = useState(null);
   const [weeklyData, setWeeklyData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [unit, setUnit] = useState("metric");
 
   useEffect(() => {
     const fetchWeatherData = async () => {
@@ -18,8 +23,8 @@ function WeatherContainer() {
       setIsLoading(true);
 
       try {
-        const todayData = await getWeatherApiData(city);
-        const weekly = await getWeeklyForcast(city);
+        const todayData = await getWeatherApiData(city, unit);
+        const weekly = await getWeeklyForcast(city, unit);
 
         setWeather(todayData);
         setWeeklyData(weekly);
@@ -32,6 +37,7 @@ function WeatherContainer() {
 
     fetchWeatherData();
   }, [city]);
+
   return (
     <div className={styles.weatherBox}>
       <WeatherOverview
@@ -39,11 +45,15 @@ function WeatherContainer() {
         setCity={setCity}
         weather={weather}
         isLoading={isLoading}
+        unit={unit}
+        setUnit={setUnit}
       />
       <WeatherDetails
         weeklyData={weeklyData}
         isLoading={isLoading}
         weather={weather}
+        unit={unit}
+        setUnit={setUnit}
       />
     </div>
   );
